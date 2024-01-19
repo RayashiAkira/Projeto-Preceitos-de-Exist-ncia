@@ -1,0 +1,878 @@
+:root{
+    --Corfundo1: #121212;
+    --Corfundo2: #1F1F1F;
+    --Corfundo3: #141414;
+    --Corfonte1: #d6d6d6;
+    --Corfonte2: #5803c8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    font-family: 'Ubuntu';
+    color: var(--Corfonte1);
+
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+/*Configuração na Scrollbar*/
+html::-webkit-scrollbar {
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #858585;
+    border-radius: 5rem;
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .interface{
+        padding: 1.5rem 2rem;
+    }
+}
+
+body {
+    background-color: var(--Corfundo1);
+}
+
+/*Bloco do Menu*/
+.interface {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    padding: 10px 100px;
+    display: flex;
+    background-color: var(--Corfundo2);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;   
+    margin-bottom: 5.3%;
+}
+/*Menu de Navegação*/
+.menu a {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+    justify-content: space-between;
+    padding-left: 5rem;
+    align-items: center;
+}
+/*Botão de Login*/
+.loginbuttonPt {
+    width: 95px;
+    height: 45px;
+    background: transparent;
+    border: 3.3px solid var(--Corfonte2);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--Corfonte1);
+    font-weight: 500;
+    margin-left: 8rem;
+    transition: 0.3s;
+}
+/*Animação da luz do botão*/
+.loginbuttonPt:hover {
+    background-color: var(--Corfonte2);
+}
+.menu a:hover{
+    color: var(--Corfonte2);
+}
+
+/*Começo do bloco de Login & Register*/
+.wrapper {
+    position: fixed;
+    top: 0;
+    z-index: 500;
+    width: 440px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    margin-top: 10%;
+    margin-left: 35%;
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: var(--Corfonte1);
+    text-align: center;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--Corfonte2);
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--Corfonte1);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--Corfonte1);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--Corfonte1);
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: var(--Corfonte1);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: var(--Corfonte2);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: var(--Corfonte1);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: var(--Corfonte1);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.4em;
+    color: var(--Corfonte2);
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: var(--Corfonte1);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: var(--Corfonte2);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.ico-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: var(--Corfundo2);
+    border-radius: 45%;
+    font-size: 2em;
+    color: var(--Corfonte1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/*Fim do bloco de Login & Register*/
+
+/*Começo do bloco de Projeto*/
+section .blocoP {
+    display: flex;
+    align-items: center;
+    background: url(../Imagens/Fundo_-_Bloco_1_v2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    max-width: 100%;
+    width: 500%;
+    height: 500%;
+    margin-top: 5.3%;
+}
+
+/*Imagem*/
+section .blocoP .imagem {
+    flex: 1 1 45rem;
+}
+
+section .blocoP .imagem > img{
+    flex: 1 1 45rem;
+    max-width: 170%;
+    margin-left: 3%;
+    border: 3.3px solid var(--Corfonte1);
+    border-radius: 5px;
+}
+
+section .blocoP .imagem .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+/*Organização do conteúdo*/
+section > .blocoP > .content  h3{
+    padding-top: 5%;
+    padding-left: 43%;
+    font-size: 2.7rem;
+    color: var(--Corfonte1);
+}
+
+section > .blocoP > .content > p{
+    font-size: 1.1rem;
+    padding-top: 1%;
+    padding-left: 20%;
+    text-align: justify;
+    margin-right: 2.5%;
+}
+
+/*Botão do mundo espiritual*/
+.botão-projeto {
+    margin-top: 1rem;
+    margin-left: 32%;
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+    color: var(--Corfonte1);
+    background: var(--Corfundo1);
+    cursor: pointer;
+    text-decoration: none;
+    border: 0.2rem solid var(--Corfonte2);
+    border-radius: 10px;
+    margin-bottom: 10%;
+    transition: 0.5s;
+}
+
+.botão-projeto span {
+    font-size: 2rem;
+}
+
+.botão-projeto:hover {
+    background-color: var(--Corfonte1) 10px;
+}
+
+/*Animação do "Mundo Espiritual*/
+.botão-projeto span:hover{
+    background-color: var(--Corfonte2);
+    color: transparent;
+    background: linear-gradient(45deg, #dcdcdc, #dcdcdc, #9600ff, #9600ff, #df0707, #df0707, #0879d9, #0879d9 );
+    background-size: 400% 100%;
+    animation: degrade 3s linear infinite alternate;
+    -webkit-background-clip: text;
+}
+
+/*Animação de degradê*/
+@keyframes degrade {
+    0% {
+        background-position-x: 0%;
+    }    
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+/*Fim do bloco de Projeto*/
+
+/*Bloco falando sobre as Transmissões*/
+section .blocoT > h3 {
+    font-size: 2.7rem;
+    text-align: center;
+    margin-top: 1%;
+}
+
+section .blocoT .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+    justify-content: space-between;
+}
+/*Começo do Bloco do Youtube*/
+.content .ytb-block {
+    font-size: 1.2rem;
+    padding: 2%;
+    position: relative;
+    text-align: justify;
+    background-color: var(--Corfundo2);
+    width: 450px;
+    height: 550px;
+    overflow: hidden;
+}
+
+/*Título do bloco*/
+.ytb-block > h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #d71e18;   
+}
+
+/*Texto do bloco*/
+.ytb-block > p:first-of-type {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.ytb-block > p:last-of-type {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/*Botão do bloco*/
+.ytb-button {
+    padding: 10px;
+    margin-top: 2.5rem;
+    font-size: 1.7rem;
+    background: var(--Corfundo1);
+    cursor: pointer;
+    border: 0.2rem solid #d71e18;
+    border-radius: 13px;
+    transition: 0.5s;
+}
+
+/*Texto do botão*/
+.ytb {
+    position: absolute;
+    color: #d71e18;
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+/*Icone do botão*/
+.iconeytb {
+    color: #d71e18;
+    padding-left: 25px;
+    font-size: 1.7rem;
+}
+
+.ytb-button:hover {
+    background-color: #d6d6d6;
+}
+/*Fim do Bloco do Youtube*/
+
+/*Inicio da Animação - Youtube*/
+.ytb-block span:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #d71e18);
+    animation: animar1 2s linear infinite;
+}
+
+@keyframes animar1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.ytb-block span:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #d71e18);
+    animation: animar2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animar2 {
+    0% {
+        transform: translatey(-100%);
+    }
+
+    100% {
+        transform: translatey(100%);
+    }
+}
+
+.ytb-block span:nth-of-type(3) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #d71e18);
+    animation: animar3 2s linear infinite;
+}
+
+@keyframes animar3 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.ytb-block span:nth-of-type(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #d71e18);
+    animation: animar4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animar4 {
+    0% {
+        transform: translatey(100%);
+    }
+
+    100% {
+        transform: translatey(-100%);
+    }
+}
+/*Fim da Animação - Youtube*/
+
+/*Começo do Bloco do Discord*/
+.content .dsc-block {
+    font-size: 1.2rem;
+    padding: 2%;
+    position: relative;
+    text-align: justify;
+    background-color: var(--Corfundo2);
+    width: 450px;
+    height: 550px;
+    overflow: hidden;
+}
+
+/*Título do bloco*/
+.dsc-block > h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5865F2;   
+}
+
+/*Texto do bloco*/
+.dsc-block > p:first-of-type {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.dsc-block > p:last-of-type {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/*Botão do bloco*/
+.dsc-button {
+    padding: 10px;
+    margin-top: 2.5rem;
+    font-size: 1.7rem;
+    background: var(--Corfundo1);
+    cursor: pointer;
+    border: 0.2rem solid #5865F2;
+    border-radius: 13px;
+    transition: 0.5s;
+}
+
+/*Texto do botão*/
+.dsc {
+    position: absolute;
+    color: #5865F2;
+    text-decoration: none;
+}
+
+/*Icone do botão*/
+.iconedsc {
+    color: #5865F2;
+    padding-left: 7px;
+    font-size: 1.7rem;
+}
+
+.dsc-button:hover {
+    background-color: var(--Corfonte1);
+}
+
+/*Fim do Bloco do Discord*/
+
+/*Inicio da Animação - Discord*/
+.dsc-block span:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #5865F2);
+    animation: animar1dsc 2s linear infinite;
+}
+
+@keyframes animar1dsc {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.dsc-block span:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #5865F2);
+    animation: animar2dsc 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animar2dsc {
+    0% {
+        transform: translatey(-100%);
+    }
+
+    100% {
+        transform: translatey(100%);
+    }
+}
+
+.dsc-block span:nth-of-type(3) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #5865F2);
+    animation: animar3dsc 2s linear infinite;
+}
+
+@keyframes animar3dsc {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.dsc-block span:nth-of-type(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #5865F2);
+    animation: animar4dsc 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animar4dsc {
+    0% {
+        transform: translatey(100%);
+    }
+
+    100% {
+        transform: translatey(-100%);
+    }
+}
+/*Fim da Animação - Discord*/
+
+/*Começo do bloco do Apoia-se*/
+
+section .blocoAP {
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    background-color: var(--Corfundo2);
+    border: 1.3px solid var(--Corfonte1);
+    max-width: 100%;
+    height: 75%;
+}
+
+/*Imagem*/
+section .blocoAP .imagem {
+    flex: 1 1 45rem;
+}
+
+section .blocoAP .imagem > img{
+    flex: 1 1 45rem;
+    max-width: 200%;
+    margin-left: 3%;
+    border: 3.3px solid var(--Corfonte2);
+    border-radius: 5px;
+}
+
+section .blocoAP .imagem .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+/*Organização do conteúdo*/
+section > .blocoAP > .content  h3{
+    padding-top: 1%;
+    padding-left: 43%;
+    font-size: 2.7rem;
+    color: var(--Corfonte1);
+}
+
+section > .blocoAP > .content > p{
+    font-size: 1.1rem;
+    margin-top: 1%;
+    padding-left: 24%;
+    text-align: justify;
+    margin-right: 2.5%;
+}
+
+/*Botão de apoia-se*/
+.botão-apoia {
+    margin-top: 1rem;
+    margin-left: 32%;
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+    color: var(--Corfonte1);
+    background: var(--Corfundo1);
+    cursor: pointer;
+    text-decoration: none;
+    border: 0.2rem solid var(--Corfonte2);
+    border-radius: 10px;
+    margin-bottom: 10%;
+    transition: 0.5s;
+}
+
+.botão-apoia:hover {
+    background-color: var(--Corfonte1);
+    color: var(--Corfundo1);
+}
+
+/*Fim do bloco do Apoia-se*/
+
+/*Começo do rodapé*/
+
+footer {
+    width: 100%;
+    color: var(--Corfonte1);
+    letter-spacing: 1px;
+}
+
+.footer_link {
+    text-decoration: none;
+}
+
+.footer_content {
+    background-color: #080404;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+}
+
+.footer_contacts img {
+    margin-bottom: 0.75rem;
+}
+
+.footer_contacts p i {
+    font-size: 0.75rem;
+}
+
+.footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer_social_media .footer_link i {
+    font-size: 1.25rem;
+}
+
+.footer_social_media .footer_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--Corfonte1);
+    border-radius: 50%;
+    transition: 0.5s;
+    margin-left: 0.5rem;
+}
+
+.footer_social_media .footer_link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#twitter {
+    background-color: rgb(20, 20, 20);
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer_link {
+    color: var(--Corfonte1);
+    transition: 0.2s;
+}
+
+.footer-list .footer_link:hover {
+    color: var(--Corfonte2);
+}
+
+.footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #121212;
+    padding: 1.1rem;
+    font-size: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footer_content {
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+    .footer_contacts p i {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .footer_content {
+        grid-template-columns: repeat(1,1fr);
+        padding: 3rem 2rem;
+    }
+    .footer_social_media .footer_link {
+        margin-left: 6.3rem;
+        height: 4rem;
+        width: 4rem;
+    }
+    .footer_social_media .footer_link i {
+        font-size: 2.1rem;
+    }
+    .footer_contacts p i {
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        padding-left: 6.5rem;
+    }
+    .footer_contacts img {
+        margin-bottom: 0.75rem;
+        align-items: center;
+        justify-content: center;
+        padding-left: 7.4rem;
+    }
+}
+
+/*Fim do rodapé*/

@@ -1,0 +1,95 @@
+:root {
+    --Corfundo1: #121212;
+    --Corfundo2: #1F1F1F;
+    --Corfundo3: #141414;
+    --Corfonte1: #d6d6d6;
+    --Corfonte2: #5803c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+
+body {
+    background-color: var(--Corfundo1);
+}
+
+/*Bloco falando sobre a criação de personagens*/
+section .blocoT .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+    justify-content: space-between;
+}
+/*Começo do Bloco de personagem*/
+.content .persona-block {
+    font-size: 1.2rem;
+    padding: 2%;
+    position: fixed;
+    text-align: justify;
+    background-color: var(--Corfundo3);
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 3%;
+    border: var(--Corfonte2) solid 3px;
+}
+
+/*Título do bloco*/
+.persona-block > h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--Corfonte1);
+    padding: 1.2rem 0 1.1rem;
+    border-radius: 5%;
+    width: 100%;
+}
+
+.blocodepersonagens .listabtn{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.4rem;
+    color: var(--Corfonte1);
+    gap: 2rem;
+}
+
+.blocodepersonagens .listabtn {
+    color: var(--Corfonte1);
+    gap: 3rem;
+    margin-top: 50px;
+}
+
+.listabtn li {
+    width: 100%;
+    border: var(--Corfonte1) solid 2.1px;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background-color: var(--Corfundo1);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.iconed20 {
+    font-size: 2.1rem;
+    margin-left: 5px;
+    color: var(--Corfonte2);
+}
+
+.textobtn {
+    text-decoration: none;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.listabtn li:hover {
+    background-color: var(--Corfonte1);
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!--Link para chamar o Font-Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Link para chamar o CSS
+        <link href="/Assets/CSS/reset.css" rel="stylesheet">-->
+        <link href="./Assets/CSS/style.css" rel="stylesheet">
+        <meta charset="UTF-8" />
+
+        <!--Icone-->
+        <link rel="shortcut icon" href="/Assets/Imagens/Icones/icone.ico" type="image/x-icon">
+
+        <!--Fonte: Ubuntu-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+        <!--SEO Search Engine Otimization-->
+        <meta name="description" content="Desbrave este enorme universo junto aos seus amigos através uma mesa de RPG" />
+
+        <!--SMO Social Media Otimization-->
+        <meta property="og:title" content="Preceitos de Existência RPG" />
+        <meta property="og:site_name" content="Preceitos de Existência RPG" />
+        <meta property="og:description" content="Desbrave este enorme universo junto aos seus amigos através uma mesa de RPG" />
+        <meta property="og:url" content="https://PreceitosdeExistênciaRPG.com" />
+        <meta property="og:image" content="http://127.0.0.1:5500/Modulo%20HTML/Imagens/Capa%20(v6).jpg" />
+        <meta property="og:image:type" content="image/jpg" />
+
+        <!--Tag para tornar responsiva-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preceitos de Existência RPG</title>
+    </head>
+    <body>
+        <!--Menu de Navegação-->
+        <header class="interface">
+            <img src="Assets/Imagens/logov2.png" class="logo">
+            <nav class="menu">
+                <a href="#projeto" class="Sobre">Sobre</a>
+                <a href="#transmition" class="Transmissões">Sessões</a>
+                <a href="#apoia" class="Apoia">Apoia-se</a>
+                <button class="loginbuttonPt">Login</buttson>
+            </nav>
+        </header>
+        <!--Fim do Menu de Navegação-->
+
+        <!--Começo do bloco Login & Register-->
+        <section>
+            <div class="wrapper">
+                <span class="ico-close">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </span>
+
+                <!--Começo do bloco de Login-->
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="authentication.php" method="post">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required name="email">
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required name="senha">
+                            <label>Senha</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Salvar a senha</label>
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="login-register">
+                            <p>Não possui uma conta ainda? <a href="#" class="register-link">Registre-se</a></p>
+                        </div>
+                    </form>
+                </div>
+                <!--Fim do bloco de Login-->
+
+                <!--Começo do bloco de Registro-->
+                <div class="form-box register">
+                    <h2>Criação de Registro</h2>
+                    <form action="cadastrar.php" method="post">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                            <input type="text" required name="usuario">
+                            <label>Nome de Usuário</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required name="email">
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required name="senha">
+                            <label>Senha</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Eu concordo com os termos e condições</label>
+                        </div>
+                        <button type="submit" class="btn">Registre-se</button>
+                        <div class="login-register">
+                            <p>Você já possui uma conta? <a href="#" class="login-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+                <!--Fim do bloco de Registro-->
+            </div>
+            
+        </section>
+        <!--Fim do bloco Login & Register-->
+
+        <!--Começo do bloco de Projeto-->
+        <section class="bloco-projeto" id="projeto">
+            <div class="blocoP">
+                <div class="imagem">
+                    <img src="Assets/Imagens/Capa dos blocos/Projeto.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Sobre o Projeto</h3>
+                    <p>O Projeto Preceitos de Existência RPG se baseia na apresentação de um universo ficticio para ser utilizado em sessões de RPGs de Mesa, possuindo suas próprias tramas, problemas, personagens e vidas. Entretanto, este mundo serve apenas como base para que os jogadores possam disfrutar com os seus próprios personagens, historías e desfechos.</p>
+                    <p>Será realizado por meio deste site a criação de fichas de personagem para ser utilizado neste universo juntamente com o gerenciamento das mesmas por parte do narrador da historia, conhecido como Mestre.</p>
+                    <a href="" class="botão-projeto">Atenda o chamado do <span>Mundo Espiritual</span></a>
+                </div>
+            </div>
+        </section>
+        <!--Fim do bloco de Projeto-->
+
+        <!--Começo do bloco de Transmissão-->
+        <section class="bloco-transmition" id="transmition">
+            <div class="blocoT">
+                <h3>Sessões</h3>
+                <div class="content">
+                    <!--Começo do bloco do Youtube-->
+                    <div class="ytb-block">
+                        <!--Começo do bloco do Span para animação-->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <!--Fim do bloco do Span para animação-->
+                        <h4>Transmissões</h4>
+                        <p>Com o intuito de alcançar um novo público e de interessar aqueles que já se entusiasmão com RPG, será realizado a transmissão de sessões voltadas para a apresentação deste universo e também explicar como as regras para que todos consigam jogar da maneira mais divertida!</p>
+                        <p>As transmissões irão ocorrer todos os domingos das 13h até as 18h em nosso canal do Youtube, caso ocorra alguma especie de imprevisto estaremos sempre avisando na aba de "Comunidade".</p>
+                        <div class="ytb-button">
+                            <ion-icon name="logo-youtube" class="iconeytb"></ion-icon>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="ytb">Conheça nosso canal!</a>
+                        </div>
+                    </div>
+                    <!--Fim do bloco do Youtube-->
+
+                    <!--Começo do bloco do Discord-->
+                    <div class="dsc-block">
+                        <!--Começo do bloco do Span para animação-->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <!--Fim do bloco do Span para animação-->
+                        <h4>Comunidade</h4>
+                        <p>Explore o Nosso Servidor no Discord! Dentro do nosso Discord, você não apenas se conectará com uma comunidade massa que só, mas também mergulhará em um ambiente envolvente, onde a troca de ideias e a interação entre os participantes são incentivadas.</p>
+                        <p>Este é o local perfeito para conectar-se com outros entusiastas que compartilham a paixão pelo projeto Preceitos de Existência RPG, além de poder, acompanhar as sessões e outros projetos bem de pertinho!</p>
+                        <div class="dsc-button">
+                            <ion-icon name="logo-discord" class="iconedsc"></ion-icon>
+                            <a href="#" class="dsc">Faça parte da comunidade!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--Fim do bloco do Discord-->
+
+        <!--Fim do bloco de Transmissões-->
+
+        <!--Começo do bloco do Apoia-se-->
+        <section class="bloco-apoia" id="apoia">
+            <div class="blocoAP">
+                <div class="imagem">
+                    <img src="Assets/Imagens/Capa dos blocos/a3075b2780e5088766b7621002747e3d.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Apoia-se</h3>
+                    <p>Contribua para o Desenvolvimento do Nosso Projeto! O Preceitos de Existência RPG continua a ser uma iniciativa em constante evolução, e é com a sua colaboração que poderemos aprimorar ainda mais o nosso site! Ao apoiar o nosso projeto, você se torna parte integrante de uma comunidade apaixonada por jogos de interpretação de papéis, contribuindo não apenas para a melhoria do site, mas também para a expansão das experiências oferecidas aos nossos membros.</autem></p>
+                    <p>Cada contribuição, por menor que seja, desempenha um papel crucial na realização de nossos objetivos compartilhados.</p>
+                    <a href="#" class="botão-apoia">Nos apoie para continuarmos ascendendo!</a>
+                </div>
+            </div>
+        </section>
+        <!--Fim do bloco do Apoia-se-->
+
+        <!--Começo do rodapé-->
+        <section class="rodape" id="rodape">
+            <footer>
+                <div class="footer_content">
+                    <div class="footer_contacts">
+                        <div class="logo">
+                            <img src="Assets/Imagens/logov2.png">
+                        </div>
+                        <p><i>Um chamado além desta realidade.</i></p>
+                        <div class="footer_social_media">
+                            <a href="#" class="footer_link" id="instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#" class="footer_link" id="twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="#" class="footer_link" id="whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <h3>Criadores do projeto</h3>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/_gabriiel.l_/" class="footer_link">New - Banco de Dados</a>
+                        </li>
+                        <li>
+                            <a target="_blank"  href="https://www.instagram.com/guteberg_mello/" class="footer_link">Liyn - FrontEnd</a>
+                        </li>
+                        <li>
+                            <a target="_blank"  href="https://www.instagram.com/kksaulo/" class="footer_link">Arkeus - BackEnd</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <h3>Sumário</h3>
+                        </li>
+                        <li>
+                            <a href="#projeto" class="footer_link">Sobre o Projeto</a>
+                        </li>
+                        <li>
+                            <a href="#transmition" class="footer_link">Sessões</a>
+                        </li>
+                        <li>
+                            <a href="#apoia" class="footer_link">Apoia-se</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_copyright">
+                    &#169
+                    2023 Todos os direitos reservados à Preceitos de Existência RPG
+                </div>
+            </footer>  
+        </section>
+
+        <!--Fim do rodapé-->
+
+        <!--Link para chamar o JS-->
+        <script src="Assets/JS/script.js"></script>
+        <!--Script para utilizar os icones do Ionicons-->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
